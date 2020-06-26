@@ -2,39 +2,47 @@
 
 using namespace std;
 
+void leer();
+void suma(int *v,int *v1,int *resp,int n);
+int n;
+int num[100], num2[100] ,num3[100];
+
 int main ()
 {
-	int n, m, suma[100], i=0;
-	int num[100], num2[100];
-	
-	cout<<"Ingrese el tamaño del vector: ";
-	cin>>n;
-	cout<<endl;
-	
-	for (int i=0;i<n;i++)
-	{
-		cout<<"Ingrese los numeros de la posicion " << i <<" del primer vector: ";
-		cin>>num[i];
-	}
-	
-	cout<< endl;
-	for (int i=0;i<n;i++)
-	{
-		cout<<"Ingrese los numeros de la posicion "<< i <<" del segundo vector: ";
-		cin>>num2[i];
-	}
-	
-	for (int i=0;i<n;i++)
-	{
-		suma[i] = num[i] + num2[i];
-	}	
-	
-	cout<<endl;
-	for (int i=0;i<n;i++)
-	{
-	cout<<"La suma de la posicion "<< i << " del vector "<< num[i] <<" con " <<num2[i]<<
-	" es: "<< suma[i] << endl;
-	}
-	
-	return 0;
+  leer();
+  suma(num,num2,num3,n);
+  cout<<"\nLa suma es: "<<endl;
+  for(int i=0;i<n;i++){
+    cout<<num[i]<<"+"<<num2[i]<<":"<<num3[i]<<endl;
+  }
+  
+  return 0;
+}
+
+void leer()
+{
+  cout<<"Ingrese el tamaño del arreglo: ";
+  cin>>n;
+  
+  cout<<endl;
+  for (int i=0;i<n;i++)
+  {
+    cout<<"Ingrea los numeros del primer arreglo: ";
+    cin>>num[i];
+  }
+  
+  cout<<endl;
+  for (int i=0;i<n;i++)
+  {
+    cout<<"Ingresa los numeros del segundo arreglo: ";
+    cin>>num2[i];
+  }
+}
+
+void suma(int *v,int *v1,int *resp,int n){
+  int sum=0;
+  for(int i=0;i<n;i++){
+    sum=v[i]+v1[i];
+    resp[i]=sum;
+  }
 }
